@@ -6,8 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".AddHabit">
 
+    <CheckBox
+        android:id="@+id/thursday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:text="@string/thursday"
+        app:layout_constraintEnd_toStartOf="@+id/friday_check"
+        app:layout_constraintStart_toEndOf="@+id/wednesday_check"
+        app:layout_constraintTop_toBottomOf="@+id/monday_check" />
+
+    <CheckBox
+        android:id="@+id/friday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="57dp"
+        android:text="@string/friday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/thursday_check"
+        app:layout_constraintTop_toBottomOf="@+id/tuesday_check" />
+
+    <CheckBox
+        android:id="@+id/wednesday_check"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="37dp"
+        android:text="@string/wednesday"
+        app:layout_constraintEnd_toStartOf="@+id/thursday_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunday_check" />
+
+    <CheckBox
+        android:id="@+id/sunday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:checked="false"
+        android:text="@string/sunday"
+        app:layout_constraintEnd_toStartOf="@+id/monday_check"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/days_text" />
+
+    <CheckBox
+        android:id="@+id/saturday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="267dp"
+        android:text="@string/saturday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday_check" />
+
+    <CheckBox
+        android:id="@+id/tuesday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="57dp"
+        android:text="@string/tuesday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/monday_check"
+        app:layout_constraintTop_toBottomOf="@+id/days_text" />
+
+    <CheckBox
+        android:id="@+id/monday_check"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:text="@string/monday"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday_check"
+        app:layout_constraintStart_toEndOf="@+id/sunday_check"
+        app:layout_constraintTop_toBottomOf="@+id/days_text" />
+
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/habit_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -21,4 +91,75 @@
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/habit_time"
+        android:layout_width="225dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="@string/time_per_session_for_habit"
+        android:inputType="number"
+        android:textColorHint="#757575"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/minutes_or_hours"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/habit_name_text" />
+
+    <ToggleButton
+        android:id="@+id/minutes_or_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#8A0091D4"
+        android:text="@string/togglebutton"
+        android:textOff="@string/minutes"
+        android:textOn="@string/hours"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/habit_time"
+        app:layout_constraintTop_toBottomOf="@+id/habit_name_text" />
+
+    <EditText
+        android:id="@+id/num_sessions"
+        android:layout_width="253dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="@string/number_of_sessions_per_week"
+        android:inputType="number"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/habit_time" />
+
+    <TextView
+        android:id="@+id/days_text"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/days_you_want_to_do_the_habit_on_optional"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num_sessions" />
+
+    <Button
+        android:id="@+id/add_habit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="148dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/add_habit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thursday_check" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
