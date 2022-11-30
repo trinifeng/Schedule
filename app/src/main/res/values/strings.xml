@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Schedule To-Do\'s</string>
     <string name="back">BACK</string>
+
     <string name="sunday">Sunday</string>
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -8,6 +9,7 @@
     <string name="thursday">Thursday</string>
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
+
     <string name="name_of_habit">Name of Habit</string>
     <string name="time_per_session_for_habit">Time per session for habit</string>
     <string name="togglebutton">ToggleButton</string>
@@ -17,9 +19,14 @@
     <string name="number_of_sessions_per_week">Number of sessions per week</string>
     <string name="days_you_want_to_do_the_habit_on_optional">Days you want to do the habit on (optional):</string>
     <string name="add_habit">Add Habit</string>
+
     <string name="username">Username</string>
     <string name="enter_a_username">Enter a Username</string>
     <string name="password">Password</string>
     <string name="enter_a_password">Enter a Password</string>
     <string name="login">LOGIN</string>
+
+    <string name="error_password">Invalid Password. Please retry</string>
+    <string name="error_login">Invalid Login. Please retry</string>
+    <string name="success">Login Successful</string>
 </resources>
