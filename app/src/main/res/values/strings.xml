@@ -29,4 +29,10 @@
     <string name="error_password">Invalid Password. Please retry</string>
     <string name="error_login">Invalid Login. Please retry</string>
     <string name="success">Login Successful</string>
+    <string name="textview">TextView</string>
+
+    <string name="error_habit">Habit name cannot be blank</string>
+    <string name="error_time">Habit time cannot be blank</string>
+    <string name="error_sessions">Habit number of sessions cannot be blank</string>
+    <string name="habit_success">Habit Successfully Added</string>
 </resources>

@@ -84,13 +84,14 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
+        android:hint="@string/name_of_habit"
         android:inputType="textPersonName"
-        android:text="@string/name_of_habit"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="Habit" />
 
     <EditText
         android:id="@+id/habit_time"
@@ -105,7 +106,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/minutes_or_hours"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/habit_name_text" />
+        app:layout_constraintTop_toBottomOf="@+id/habit_name_text"
+        android:autofillHints="0" />
 
     <ToggleButton
         android:id="@+id/minutes_or_hours"
@@ -134,7 +136,8 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/habit_time" />
+        app:layout_constraintTop_toBottomOf="@+id/habit_time"
+        android:autofillHints="0" />
 
     <TextView
         android:id="@+id/days_text"

@@ -20,13 +20,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/result_output"
+            android:layout_width="match_parent"
+            android:layout_height="177dp"
+            android:layout_marginTop="150dp"
+            android:background="#FEFEFE"
+            android:backgroundTint="#FEFEFE"
+            android:text="@string/textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
