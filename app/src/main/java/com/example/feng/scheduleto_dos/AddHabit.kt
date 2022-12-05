@@ -108,7 +108,11 @@ class AddHabit : AppCompatActivity() {
                             result += " preferably on days: $days"
 
                         Intent(this@AddHabit, MainActivity::class.java).also {
-                            it.putExtra("EXTRA_RESULT", result)
+                            it.putExtra("EXTRA_NAME", habit)
+                            it.putExtra("EXTRA_TIME", time)
+                            it.putExtra("EXTRA_SESSIONS", numSessions)
+                            it.putExtra("EXTRA_DAYS", days)
+                            it.putExtra("EXTRA_MINUTES_OR_HOURS", minutesOrHours)
                             startActivity(it)
                         }
                     }
