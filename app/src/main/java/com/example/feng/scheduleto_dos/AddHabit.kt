@@ -66,6 +66,9 @@ class AddHabit : AppCompatActivity() {
                 days.add(7)
             }
 
+            if(days.isEmpty())
+                days.add(0)
+
             days.sort()
             minutesOrHours = timeButton.isChecked //hours is true, minutes is false
             habit = habitName.text.toString()

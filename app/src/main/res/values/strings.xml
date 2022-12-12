@@ -35,4 +35,5 @@
     <string name="error_time">Habit time cannot be blank</string>
     <string name="error_sessions">Habit number of sessions cannot be blank</string>
     <string name="habit_success">Habit Successfully Added</string>
+    <string name="free">FREE</string>
 </resources>
