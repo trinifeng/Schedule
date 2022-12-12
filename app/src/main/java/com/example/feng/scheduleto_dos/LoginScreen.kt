@@ -39,7 +39,7 @@ class LoginScreen : AppCompatActivity() {
                 }
                 LoginSuccess.success -> {
                     Toast.makeText(applicationContext, getString(R.string.success), Toast.LENGTH_SHORT).show()
-                    Intent(this@LoginScreen, AddHabit::class.java).also {
+                    Intent(this@LoginScreen, Menu::class.java).also {
                         startActivity(it)
                     }
                 }

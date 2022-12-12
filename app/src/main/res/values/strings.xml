@@ -36,4 +36,6 @@
     <string name="error_sessions">Habit number of sessions cannot be blank</string>
     <string name="habit_success">Habit Successfully Added</string>
     <string name="free">FREE</string>
+    <string name="add_a_habit">ADD A HABIT</string>
+    <string name="view_habits">VIEW HABITS</string>
 </resources>
