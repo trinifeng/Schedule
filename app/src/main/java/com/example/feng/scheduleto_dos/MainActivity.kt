@@ -10,7 +10,6 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     lateinit var backButton: Button
-    lateinit var resultOutput: TextView
     lateinit var sunOutput: TextView
     lateinit var monOutput: TextView
     lateinit var tuesOutput: TextView
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var thursOutput: TextView
     lateinit var friOutput: TextView
     lateinit var satOutput: TextView
+    var result = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         sessionsPerDay = numSessions / daysPerWeek
 
         for(i in 1..sessionsPerDay) {
-            habit = "$name \n $time "
+            habit += "$name \n $time "
             if (minutesOrHours)
                 habit += "hours"
             else
@@ -81,24 +81,26 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Your habit takes too long in one day! Please re-enter your habit", Toast.LENGTH_SHORT).show()
         }
         else if(sessionsPerDay >= 5) {
-            Toast.makeText(applicationContext, "You have too many sessions on one day. Showing only 5", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "You have too many sessions on one day. Please re-enter your habit", Toast.LENGTH_SHORT).show()
         }
         else if (days != null) {
+            result += habit
+
             for(i in 1..sessionsPerDay) {
                 if (days.contains(1))
-                    sunOutput.text = habit
+                    sunOutput.text = result
                 if(days.contains(2))
-                    monOutput.text = habit
+                    monOutput.text = result
                 if (days.contains(3))
-                    tuesOutput.text = habit
+                    tuesOutput.text = result
                 if(days.contains(4))
-                    wedOutput.text = habit
+                    wedOutput.text = result
                 if (days.contains(5))
-                    thursOutput.text = habit
+                    thursOutput.text = result
                 if(days.contains(6))
-                    friOutput.text = habit
+                    friOutput.text = result
                 if(days.contains(7))
-                    satOutput.text = habit
+                    satOutput.text = result
             }
         }
         else {
