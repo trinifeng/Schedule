@@ -13,7 +13,6 @@ var habitList = HabitList()
 class MainActivity : AppCompatActivity() {
 
     lateinit var backButton: Button
-    lateinit var resultOutput: TextView
     lateinit var sunOutput: TextView
     lateinit var monOutput: TextView
     lateinit var tuesOutput: TextView
@@ -27,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         backButton = findViewById(R.id.back_button)
-        //resultOutput = findViewById(R.id.result_output)
         sunOutput = findViewById(R.id.sunday_habits)
         monOutput = findViewById(R.id.monday_habits)
         tuesOutput = findViewById(R.id.tuesday_habits)
@@ -45,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         val habit = Habit(name, time, numSessions, days as ArrayList<Int>, minutesOrHours)
 
         habitList.hl.add(habit)
-        Toast.makeText(applicationContext, habitList.hl.size.toString(), Toast.LENGTH_LONG).show()
 
         var errorCheck: Int = habit.checkErrors()
 
@@ -65,8 +62,6 @@ class MainActivity : AppCompatActivity() {
             friOutput.text = habitList.friHabits()
             satOutput.text = habitList.satHabits()
         }
-
-        //resultOutput.text = "$name \n $time \n $numSessions \n $days \n $minutesOrHours"
 
         backButton.setOnClickListener {
             Intent(this@MainActivity, AddHabit::class.java).also {
