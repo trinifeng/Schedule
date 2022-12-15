@@ -22,11 +22,5 @@ class Menu : AppCompatActivity() {
                 startActivity(it)
             }
         }
-
-        viewHabitsButton.setOnClickListener {
-            Intent(this@Menu, ViewHabits::class.java).also {
-                startActivity(it)
-            }
-        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.feng.scheduleto_dos
 
+import HabitList
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,7 +40,7 @@ class LoginScreen : AppCompatActivity() {
                 }
                 LoginSuccess.success -> {
                     Toast.makeText(applicationContext, getString(R.string.success), Toast.LENGTH_SHORT).show()
-                    Intent(this@LoginScreen, Menu::class.java).also {
+                    Intent(this@LoginScreen, AddHabit::class.java).also {
                         startActivity(it)
                     }
                 }
