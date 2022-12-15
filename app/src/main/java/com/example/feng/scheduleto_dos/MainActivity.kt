@@ -1,11 +1,14 @@
 package com.example.feng.scheduleto_dos
 
+import Habit
+import HabitList
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+var habitList = HabitList()
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,70 +42,28 @@ class MainActivity : AppCompatActivity() {
         var days = intent.getIntegerArrayListExtra("EXTRA_DAYS")
         val minutesOrHours = intent.getBooleanExtra("EXTRA_MINUTES_OR_HOURS", false)
 
-        var sessionsPerDay = 0
-        var daysPerWeek = numSessions
-        var habit = ""
+        val habit = Habit(name, time, numSessions, days as ArrayList<Int>, minutesOrHours)
 
-        if (days != null && !(days.contains(0))) {
-            daysPerWeek = days.size
-        }
-        else if(numSessions > 7) {
-            daysPerWeek = 7
-        }
+        habitList.hl.add(habit)
+        Toast.makeText(applicationContext, habitList.hl.size.toString(), Toast.LENGTH_LONG).show()
 
-        if (days != null) {
-            if(days.contains(0)) {
-                val daySpacing: Int = 7 / daysPerWeek
-                var sum = 1
-                while (sum <= 7 && days.size <= daysPerWeek) {
-                    days.add(sum)
-                    sum += daySpacing
-                }
-                days.remove(0)
-            }
-        }
+        var errorCheck: Int = habit.checkErrors()
 
-        sessionsPerDay = numSessions / daysPerWeek
-
-        for(i in 1..sessionsPerDay) {
-            habit = "$name \n $time "
-            if (minutesOrHours)
-                habit += "hours"
-            else
-                habit += "minutes"
-            habit += "\n"
-        }
-
-        var totalTime: Double = (time * sessionsPerDay).toDouble()
-        if(!minutesOrHours)
-            totalTime /= 60.0
-
-        if(totalTime >= 16) {
+        if(errorCheck == 1) {
             Toast.makeText(applicationContext, "Your habit takes too long in one day! Please re-enter your habit", Toast.LENGTH_SHORT).show()
         }
-        else if(sessionsPerDay >= 5) {
+        else if(errorCheck == 2) {
             Toast.makeText(applicationContext, "You have too many sessions on one day. Showing only 5", Toast.LENGTH_SHORT).show()
         }
-        else if (days != null) {
-            for(i in 1..sessionsPerDay) {
-                if (days.contains(1))
-                    sunOutput.text = habit
-                if(days.contains(2))
-                    monOutput.text = habit
-                if (days.contains(3))
-                    tuesOutput.text = habit
-                if(days.contains(4))
-                    wedOutput.text = habit
-                if (days.contains(5))
-                    thursOutput.text = habit
-                if(days.contains(6))
-                    friOutput.text = habit
-                if(days.contains(7))
-                    satOutput.text = habit
-            }
-        }
         else {
-            Toast.makeText(applicationContext, "Error occurred. Please try again", Toast.LENGTH_SHORT).show()
+            var newDays = habit.setDays()
+            sunOutput.text = habitList.sunHabits()
+            monOutput.text = habitList.monHabits()
+            tuesOutput.text = habitList.tuesHabits()
+            wedOutput.text = habitList.wedHabits()
+            thursOutput.text = habitList.thursHabits()
+            friOutput.text = habitList.friHabits()
+            satOutput.text = habitList.satHabits()
         }
 
         //resultOutput.text = "$name \n $time \n $numSessions \n $days \n $minutesOrHours"
